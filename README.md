@@ -1,1 +1,1 @@
-Digital Image Processing lectures using opencv and python
+Digital Image Processing classes using opencv and python
