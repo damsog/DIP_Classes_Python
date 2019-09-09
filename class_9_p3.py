@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Aug 23 22:55:37 2019
+Created on Sun Sep  8 17:32:43 2019
 
 @author: luisf
 """
@@ -8,37 +8,61 @@ Created on Fri Aug 23 22:55:37 2019
 # =============================================================================
 # DIP CLASS 9
 #
-#P3: Distance Transformation
-#    
+#P3: Morphology: More morpholy operations
+#     Floodfill
 # =============================================================================
 
-# A distance transformation is an operator that calculates and assigns the
-# distance of each pixel (bright) to the nearest zero valued pixel, creating 
-# a new image composed of zero values and distances for bright pixels
+# Floodfill is an operation that starts fromapoint (given) and every pixel
+# it finds that is 0 sets it to max. in other words, fills the background of 
+# an image with a value that we want
 
 import cv2
 import numpy as np
 
 root = 'D:/U de A/PDI/DIP_Clases_Python/'
 
-# Reading the image and converting it to grayscale
-img = cv2.imread(root + 'images/figuras_3.bmp')
+img = cv2.imread('images/tofill.bmp')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+r,c = img.shape
+nh = int(r*1)
+nw = int(c*1)
+img2 = cv2.resize(img, ( nw,nh ), interpolation=cv2.INTER_AREA)
+h, w = img2.shape
 
-# applying a threshold. this transformation works on binary images
-_,img = cv2.threshold(img, 100, 255, cv2.THRESH_BINARY)
-cv2.imshow('Original',img)
+#we have to create a mask that is 1 pixel bigger than our image to fill in 
+#every direction
+mask = np.zeros(( h + 2 , w + 2 ) , np.uint8)
 
-# Applying the distance transformation, calculating the euclidean distance (L2)
-img2 = cv2.distanceTransform(img, cv2.DIST_L2, 3)
+# this point is where we will start tofill
+point = (0,0) 
+img_tofill = img2.copy()
+#filling with a value of 100
+cv2.floodFill(img_tofill,mask, (0,0), 100)
 
-# normalizing the values of the new image for 0 - 1
-cv2.normalize(img2, img2, 0, 1, cv2.NORM_MINMAX)
+cv2.imshow('Img', np.column_stack((img2,img_tofill )) )
 
-# showing the result
-cv2.imshow('Disntance Transform',img2)
+mask = mask*0 #setting themask back to 0
+#lets use this function to remove holes in a binary image
+point = (0,0) 
+img_tofill = img2.copy()
+#filling with a value of 255
+cv2.floodFill(img_tofill,mask, (0,0), 255)
 
-# each line is the distance to the nearest zero valued pixel
+
+#now because the figures have a value of 255, the background
+#has merged with the figures leaving only the holes
+
+#now lets invert the image so the holes are set to 255 and the rest is 0
+img_tofill = cv2.bitwise_not(img_tofill)
+
+
+#and finally lets apply an OR gate between the filled image and our normal img
+img_tofill = img2 | img_tofill
+
+cv2.imshow('Result', np.column_stack((img2, img_tofill)) )
+
+
+
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

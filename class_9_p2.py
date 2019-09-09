@@ -9,7 +9,7 @@ Created on Fri Aug 23 22:52:09 2019
 # DIP CLASS 9
 #
 #P2: Morphology: More morpholy operations
-#     Top-Hat, Black-Hat, Gradient, Flood Fill*
+#     Top-Hat, Black-Hat, Gradient
 # =============================================================================
 
 # There are more morphological operations based on the erosion and dilation
@@ -54,7 +54,6 @@ img_blackhat = cv2.morphologyEx(imggray, cv2.MORPH_BLACKHAT, kernel)
 
 cv2.imshow('Black-Hat', np.column_stack((imggray,img_blackhat)) )
 
-# Pending FloodFill
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

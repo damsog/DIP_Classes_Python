@@ -23,6 +23,7 @@ def components( imagen):
     iHLS = cv2.cvtColor(iBGR, cv2.COLOR_BGR2HLS)
     #iHSV = cv2.subtract(iHSV,255)
     iBGR = ( 255 - iBGR )
+    #B~ , S, b, v, L
     return iBGR[:,:,0], iHSV[:,:,1], iLab[:,:,2], iLuv[:,:,2], iHLS[:,:,1]
 
     
