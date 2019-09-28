@@ -75,10 +75,10 @@ cols = 0
 angles = [0, np.pi/4, np.pi/2, 3*np.pi/4]
 
 img_cont = np.zeros((r_img - r_ini*2,c_img - c_ini*2), np.float32)
-#img_diss = img_cont.copy()
-#img_hom = img_cont.copy()
+img_diss = img_cont.copy()
+img_hom = img_cont.copy()
 img_eng = img_cont.copy()
-#img_corr = img_cont.copy()
+img_corr = img_cont.copy()
 
 
 #sliding the window through all the image
@@ -89,32 +89,42 @@ for i in range(r_ini, r_end ):
         
         # Calculate the GLCM for the window
         w_GLCM = feature.greycomatrix(window, [1], [angles[0]],levels=levels)
-        #img_cont[rows, cols] = feature.greycoprops(w_GLCM, 'contrast')
-        #img_diss[rows, cols] = feature.greycoprops(w_GLCM, 'dissimilarity')
-        #img_hom[rows, cols] = feature.greycoprops(w_GLCM, 'homogeneity')
+        img_cont[rows, cols] = feature.greycoprops(w_GLCM, 'contrast')
+        img_diss[rows, cols] = feature.greycoprops(w_GLCM, 'dissimilarity')
+        img_hom[rows, cols] = feature.greycoprops(w_GLCM, 'homogeneity')
         img_eng[rows, cols] = feature.greycoprops(w_GLCM, 'energy')
-        #img_corr[rows, cols] = feature.greycoprops(w_GLCM, 'correlation')
+        img_corr[rows, cols] = feature.greycoprops(w_GLCM, 'correlation')
         
         cols = cols + 1
     
     rows = rows + 1
 
-#img_cont = ( (img_cont / (np.max(img_cont) ) )*255 ).astype(np.uint8)
-#img_diss = ( (img_diss / (np.max(img_diss) ) )*255 ).astype(np.uint8)
-#img_hom = ( (img_hom / (np.max(img_hom) ) )*255 ).astype(np.uint8)
+#normalizing, rounding and casting to uint8 which is the format for images.
+# only for display
+img_cont = ( (img_cont / (np.max(img_cont) ) )*255 ).astype(np.uint8)
+img_diss = ( (img_diss / (np.max(img_diss) ) )*255 ).astype(np.uint8)
+img_hom = ( (img_hom / (np.max(img_hom) ) )*255 ).astype(np.uint8)
 img_eng = ( (img_eng / (np.max(img_eng) ) )*255 ).astype(np.uint8)
-#img_corr = ( (img_corr / (np.max(img_corr) ) )*255 ).astype(np.uint8)
+img_corr = ( (img_corr / (np.max(img_corr) ) )*255 ).astype(np.uint8)
+
+
 
 # the resulting image is smaller than the original duw to the window. so we
 # have to create a border that replicates close pixel values
-img_eng = cv2.copyMakeBorder(img_eng, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
 
-cv2.imshow('ORG', img_g)
-#cv2.imshow('Contrast', img_cont)
-#cv2.imshow('Diss', img_diss)
-#cv2.imshow('Hom', img_hom)
-cv2.imshow('Energy', img_eng)
-#cv2.imshow('Corr', img_corr)
+img_cont = cv2.copyMakeBorder(img_cont, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
+img_diss = cv2.copyMakeBorder(img_diss, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
+img_hom = cv2.copyMakeBorder(img_hom, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
+img_eng = cv2.copyMakeBorder(img_eng, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
+img_corr = cv2.copyMakeBorder(img_corr, r_ini, r_ini, c_ini, c_ini, cv2.BORDER_REPLICATE)
+
+
+#%%
+
+
+cv2.imshow('Comparing', np.row_stack(( np.column_stack(( img_g,img_cont )),
+                             np.row_stack(( np.column_stack(( img_diss,img_hom )),
+                                           np.column_stack(( img_eng,img_corr )) )) )) )
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
