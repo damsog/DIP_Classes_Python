@@ -69,8 +69,8 @@ def localEnergy(img, wsize = 11):
     return img_eng
 
 # Reading the image
-root = 'D:/U de A/PDI/DIP_Clases_Python/images/'
-img = cv2.imread(root + '5textures.png')
+root = os.path.abspath(os.getcwd()) + '/images'
+img = cv2.imread(root + '/5textures.png')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 #Creating the Gabor filter bank

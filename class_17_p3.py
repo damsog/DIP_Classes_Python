@@ -70,8 +70,8 @@ def GLCMtransforms(img, wsize = 11):
     return img_cont,img_diss,img_hom,img_eng,img_corr, img_asm
 
 # Reading the image
-root = 'D:/U de A/PDI/DIP_Clases_Python/images/'
-img = cv2.imread(root + '5textures.png')
+root = os.path.abspath(os.getcwd()) + '/images' 
+img = cv2.imread(root + '/5textures.png')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # the GLCM matrix takes all the posible combinations of changes. for 8 bit

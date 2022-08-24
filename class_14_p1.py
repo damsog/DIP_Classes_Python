@@ -77,7 +77,7 @@ def decompose(img, printcomps = False):
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
-img = cv2.imread(root + '/class12/015.jpg')
+img = cv2.imread(root + '/Class12/015.jpg')
 r,c,l = img.shape
 
 img_avg = avgfilter(img)
@@ -106,7 +106,7 @@ S_thresh = S_thresh | S_fill
 
 #cv2.imshow('Holes filled ',S_thresh)
 
-_,contours,_ = cv2.findContours(S_thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+contours,_ = cv2.findContours(S_thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
 #lets find the biggest figure on the layer and set 0 everything else
 S_n = img.copy()*0

@@ -10,11 +10,13 @@ Created on Sat Aug 17 11:57:17 2019
 #
 #Showing images and reshaping
 # =============================================================================
-
+#%%
 import cv2
 import os
 import numpy as np
 import os
+
+#%%
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
@@ -46,5 +48,5 @@ cv2.imshow('frame2',ab2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
+#%%
 

@@ -33,7 +33,7 @@ def biggest_object(img):
     img[img > 0] = 255 
     
     # finding contours on the image
-    _,contours,_ = cv2.findContours(img, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    contours,_ = cv2.findContours(img, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     
     # biggest  bounding Rectangle and area so far
     mx = (0,0,0,0)

@@ -36,7 +36,7 @@ figuresg[figuresg>0]=255
 # an aproximation option for the points. It returns the image that we passed to
 # it, the contours itself and the hierarchy of the contours. lets ignore
 # the first one and the last one for now
-_,contours,_ = cv2.findContours(figuresg, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+contours,_ = cv2.findContours(figuresg, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
 
 # function to draw the contours. an image to draw upon, the contour to draw,
 # the color, and the thickness of the contour. this modifies the image it draws on!
