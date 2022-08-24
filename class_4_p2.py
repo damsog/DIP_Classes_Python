@@ -25,7 +25,7 @@ import numpy as np
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #reading an image and transforming from BGR to other systems
-pBGR = cv2.imread(root + 'images/peppers.jpg')
+pBGR = cv2.imread(root + '/peppers.jpg')
 pHSV = cv2.cvtColor(pBGR, cv2.COLOR_BGR2HSV)
 pLab = cv2.cvtColor(pBGR, cv2.COLOR_BGR2Lab)
 

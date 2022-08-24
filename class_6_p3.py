@@ -29,11 +29,11 @@ from MyClearBorder.ClearBorder import myclearborder
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #lets load the image of the car
-placaColor = cv2.imread(root + 'images/carro.jpg')
+placaColor = cv2.imread(root + '/carro.jpg')
 r,c,l = placaColor.shape
 
 #and lets load the image of the number plate that we have been processing
-placa = cv2.imread(root + 'images/placaCarro.tif')
+placa = cv2.imread(root + '/placaCarro.tif')
 
 #changing its space to grayscale and setting to 255 anything that is not 0
 #this will be our mask to cut the number plate on the car image
@@ -82,7 +82,7 @@ cv2.namedWindow('Number Plate Sectioned')
 cv2.moveWindow('Number Plate Sectioned', 400,250)
 cv2.imshow('Number Plate Sectioned',placaColor)
 
-cv2.imwrite(root + 'images/placa_p.jpg',placaColor)
+cv2.imwrite(root + '/placa_p.jpg',placaColor)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

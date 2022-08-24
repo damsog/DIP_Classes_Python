@@ -23,7 +23,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/imagen_2.jpg')
+img = cv2.imread(root + '/imagen_2.jpg')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # here we are derivating on x using a kernel of size 5x5

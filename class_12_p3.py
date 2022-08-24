@@ -22,7 +22,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/imagen_2.jpg')
+img = cv2.imread(root + '/imagen_2.jpg')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #------------------------------------------------------------------------------
 #------------------------Canny edge detector-----------------------------------
@@ -50,7 +50,7 @@ cv2.imshow('ORG vs Edges', np.column_stack((img_g,img_edges)) )
 # Hough Line transform
 # Finds the lines on an image and represents them in polar form
 # r = x*cost + y*sint
-img2 = cv2.imread(root + 'images/simpsons_house.jpg')
+img2 = cv2.imread(root + '/simpsons_house.jpg')
 img2_g = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
 

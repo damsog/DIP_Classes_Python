@@ -57,7 +57,7 @@ def biggest_object(img):
     return mx_area, img        
     
 
-plate = cv2.imread(root + 'images/placaCarro.tif')
+plate = cv2.imread(root + '/placaCarro.tif')
 
 area, nplate = biggest_object(plate)
 

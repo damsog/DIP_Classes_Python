@@ -20,7 +20,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/placa_p.jpg')
+img = cv2.imread(root + '/placa_p.jpg')
 
 
 cv2.waitKey(0)

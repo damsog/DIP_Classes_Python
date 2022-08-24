@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
-carro = cv2.imread(root + 'images/carro(1).jpg')
+carro = cv2.imread(root + '/carro(1).jpg')
 r,c,l = carro.shape
 carro = cv2.resize( carro, ( int(c*0.2),int(r*0.2)) , interpolation=cv2.INTER_AREA )
 carroG = cv2.cvtColor(carro, cv2.COLOR_BGR2GRAY)

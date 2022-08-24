@@ -25,7 +25,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/river.jpg')
+img = cv2.imread(root + '/river.jpg')
 r, c, l =img.shape
 img = cv2.resize(img, (int(c*0.5),int(r*0.5)) , cv2.INTER_AREA)
 

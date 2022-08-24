@@ -18,7 +18,7 @@ import numpy as np
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #we load the image and transform it into grayscale to have only 1 layer
-tri = cv2.imread(root + 'images/triangulo.tif') 
+tri = cv2.imread(root + '/triangulo.tif') 
 tri = cv2.cvtColor(tri, cv2.COLOR_BGR2GRAY)
 
 #kernel element

@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the image and changing it to gray scale
-text = cv2.imread(root + 'images/texto2.bmp')
+text = cv2.imread(root + '/texto2.bmp')
 text = cv2.cvtColor(text, cv2.COLOR_BGR2GRAY)
 r,c = text.shape
 

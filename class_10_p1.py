@@ -24,7 +24,7 @@ root = os.path.abspath(os.getcwd()) + '/images'
 
 # lets read the image and keep it as (BGR even tho its binary) to draw the
 # contours later using colors
-figures = cv2.imread(root + 'images/figuras.bmp')
+figures = cv2.imread(root + '/figuras.bmp')
 r,c,l = figures.shape
 cfigures = np.copy(figures)
 # converting to grayscale and thresholding. findcontours works on binary images

@@ -16,7 +16,7 @@ import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
-a = cv2.imread(root + 'images/paisaje.jpg')  #Reading an image
+a = cv2.imread(root + '/paisaje.jpg')  #Reading an image
 cv2.imshow('frame1',a)         #showing original image
 
 #We want to decompose a on its rgb components

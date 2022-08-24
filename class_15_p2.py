@@ -23,7 +23,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/placa_p.jpg')
+img = cv2.imread(root + '/placa_p.jpg')
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 r,c = img.shape

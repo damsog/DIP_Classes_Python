@@ -16,7 +16,7 @@ import cv2
 import os
 import numpy as np
 root = os.path.abspath(os.getcwd()) + '/images' 
-carro = cv2.imread(root + 'images/carro.jpg')
+carro = cv2.imread(root + '/carro.jpg')
 
 r,c,l = carro.shape
 

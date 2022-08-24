@@ -25,8 +25,8 @@ root = os.path.abspath(os.getcwd()) + '/images'
 #will ignore the overflow bits. we have to be careful to do numerical operations
 #to evade this.
 
-a = cv2.imread(root + 'images/imagen_1.jpg')
-b = cv2.imread(root + 'images/imagen_2.jpg')
+a = cv2.imread(root + '/imagen_1.jpg')
+b = cv2.imread(root + '/imagen_2.jpg')
 
 #casting to uint32 to do the sumation and casting it again o uint8 after the 
 #division

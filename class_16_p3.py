@@ -48,7 +48,7 @@ from skimage import feature
 
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/field.jpg')
+img = cv2.imread(root + '/field.jpg')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # the GLCM matrix takes all the posible combinations of changes. for 8 bit

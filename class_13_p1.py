@@ -22,7 +22,7 @@ import os
 import numpy as np
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/imagen_2.jpg')
+img = cv2.imread(root + '/imagen_2.jpg')
 
 # reflecting an image
 

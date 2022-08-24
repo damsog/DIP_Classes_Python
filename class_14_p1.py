@@ -77,7 +77,7 @@ def decompose(img, printcomps = False):
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
-img = cv2.imread(root + 'images/class12/015.jpg')
+img = cv2.imread(root + '/class12/015.jpg')
 r,c,l = img.shape
 
 img_avg = avgfilter(img)

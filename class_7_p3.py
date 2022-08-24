@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the number plate and converting to gray scale
-plate = cv2.imread(root + 'images/placa_p.jpg')
+plate = cv2.imread(root + '/placa_p.jpg')
 plateg = cv2.cvtColor(plate, cv2.COLOR_BGR2GRAY)
 
 #applying threshold

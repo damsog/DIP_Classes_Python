@@ -19,7 +19,7 @@ from Componentes.getComponents import components
 
 root = os.path.abspath(os.getcwd()) + '/images' 
 
-carro = cv2.imread(root + 'images/carro.jpg')
+carro = cv2.imread(root + '/carro.jpg')
 
 r,c,l = carro.shape
 
@@ -58,7 +58,7 @@ min3[min3>160]=255
 cv2.imshow('Minimum 1',min3)
 
 #comment this if not at full scale to not re-qrite the processed image at full scale
-cv2.imwrite(root + 'images/placaCarro_2.tif',min3)
+cv2.imwrite(root + '/placaCarro_2.tif',min3)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

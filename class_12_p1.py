@@ -48,7 +48,7 @@ import numpy as np
 kernel = np.ones((10,10), np.float32)/100
 
 root = os.path.abspath(os.getcwd()) + '/images' 
-img = cv2.imread(root + 'images/placa_p.jpg')
+img = cv2.imread(root + '/placa_p.jpg')
 #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # lets convolve the image and the kernel of the filter with anchor point at

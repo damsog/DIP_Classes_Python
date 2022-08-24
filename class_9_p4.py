@@ -23,7 +23,7 @@ import numpy as np
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 # Reading the image and converting it to grayscale
-img = cv2.imread(root + 'images/figuras_3.bmp')
+img = cv2.imread(root + '/figuras_3.bmp')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # applying a threshold. this transformation works on binary images

@@ -23,7 +23,7 @@ from time import sleep
 root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the image and creating a copy to compare
-figs = cv2.imread(root + 'images/figuras.tif')
+figs = cv2.imread(root + '/figuras.tif')
 cv2.imshow('Original ',figs)
 figs2 = np.copy(figs)
 
