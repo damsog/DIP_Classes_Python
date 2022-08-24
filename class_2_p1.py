@@ -12,12 +12,14 @@ Created on Sat Aug 17 11:57:17 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
+import os
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
-a = cv2.imread(root + 'images/paisaje.jpg')  #Reading an image
-b = cv2.imread(root + 'images/carro.jpg')
+a = cv2.imread(root + '/paisaje.jpg')  #Reading an image
+b = cv2.imread(root + '/carro.jpg')
 #a color image is composed of 3 arrays (layers) each one with size rowsXcolumns
 #each row x column x layer (which is the color) has a value from 0 to 255
 #combining the values of each color (RGB) on a rowXcolumn we obtain a certain pixel

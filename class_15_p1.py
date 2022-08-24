@@ -18,9 +18,10 @@ Created on Sun Sep 15 11:42:54 2019
 # obtain a discrete spectrum.
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/imagen_2.jpg')
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

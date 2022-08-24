@@ -21,9 +21,10 @@ Created on Sun Sep 15 18:34:59 2019
 # done with other filters
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/river.jpg')
 r, c, l =img.shape
 img = cv2.resize(img, (int(c*0.5),int(r*0.5)) , cv2.INTER_AREA)

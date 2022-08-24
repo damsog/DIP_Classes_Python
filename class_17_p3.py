@@ -13,6 +13,7 @@ Created on Sat Sep 28 12:05:09 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 from skimage import feature
 

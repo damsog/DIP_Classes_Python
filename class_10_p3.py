@@ -16,9 +16,10 @@ Created on Sun Aug 25 20:53:23 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 fig = cv2.imread('images/figura2.bmp')
 fig = cv2.cvtColor(fig, cv2.COLOR_BGR2GRAY)

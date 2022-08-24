@@ -13,6 +13,7 @@ Created on Fri Sep 27 19:14:49 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 from skimage.filters import gabor_kernel
 from scipy import ndimage as ndi

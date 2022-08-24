@@ -14,9 +14,10 @@ Created on Thu Aug 22 17:45:46 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the number plate and converting to gray scale
 plate = cv2.imread(root + 'images/placa_p.jpg')

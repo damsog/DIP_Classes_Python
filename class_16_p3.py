@@ -38,6 +38,7 @@ Created on Thu Sep 19 21:12:29 2019
 # we then create a new texture image.
 
 import cv2
+import os
 import numpy as np
 # opencv doesn't have a GLCM implementation anymore for some reason
 # so lets import it from skimage (from sci-kit. another great image processing
@@ -46,7 +47,7 @@ import numpy as np
 from skimage import feature
 
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/field.jpg')
 img_g = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 

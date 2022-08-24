@@ -15,8 +15,9 @@ Created on Fri Aug 23 22:52:09 2019
 # There are more morphological operations based on the erosion and dilation
 
 import cv2
+import os
 import numpy as np
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 img = cv2.imread('images/carro(1).jpg')
 imggray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

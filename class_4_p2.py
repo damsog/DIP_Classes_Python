@@ -19,9 +19,10 @@ Created on Sat Aug 17 20:45:08 2019
 # there are numerous other systems for representing color like CMYK, or Lab
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #reading an image and transforming from BGR to other systems
 pBGR = cv2.imread(root + 'images/peppers.jpg')

@@ -16,9 +16,10 @@ Created on Sun Sep 15 17:28:38 2019
 
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/placa_p.jpg')
 
 

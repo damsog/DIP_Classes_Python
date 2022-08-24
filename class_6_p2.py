@@ -12,9 +12,10 @@ Created on Sun Aug 18 20:36:43 2019
 # =============================================================================
  
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #we load the image and transform it into grayscale to have only 1 layer
 tri = cv2.imread(root + 'images/triangulo.tif') 

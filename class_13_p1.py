@@ -18,9 +18,10 @@ Created on Mon Sep  9 20:15:24 2019
 # like flipping it, reflecting it, resizing it. etc.
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/imagen_2.jpg')
 
 # reflecting an image

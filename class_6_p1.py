@@ -16,10 +16,11 @@ Created on Sun Aug 18 19:13:05 2019
 #the image (increases brightness) or reduces it in case of erosion
 
 import cv2
+import os
 import numpy as np
 from time import sleep
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the image and creating a copy to compare
 figs = cv2.imread(root + 'images/figuras.tif')

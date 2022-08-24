@@ -14,10 +14,11 @@ Created on Thu Aug 22 16:53:07 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #loading the image and changing it to gray scale
 text = cv2.imread(root + 'images/texto2.bmp')

@@ -12,6 +12,7 @@ Created on Sat Aug 17 14:43:01 2019
 
 
 import cv2
+import os
 import numpy as np
 
 #this line creates a cature video object

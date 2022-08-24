@@ -19,9 +19,10 @@ Created on Sun Sep 15 15:54:07 2019
 # but also computationally
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/placa_p.jpg')
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

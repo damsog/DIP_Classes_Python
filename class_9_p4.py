@@ -17,9 +17,10 @@ Created on Fri Aug 23 22:55:37 2019
 # a new image composed of zero values and distances for bright pixels
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 # Reading the image and converting it to grayscale
 img = cv2.imread(root + 'images/figuras_3.bmp')

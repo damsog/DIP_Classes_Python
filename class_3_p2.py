@@ -12,9 +12,10 @@ Created on Sat Aug 17 16:17:49 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 #Before Fusing the images.
 #As we know each image (in BGR color system) is form by 3 layers (Blue, Green,Red)

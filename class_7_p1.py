@@ -20,10 +20,11 @@ Created on Mon Aug 19 15:46:10 2019
 # high populated intensities
 
 import cv2
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 carro = cv2.imread(root + 'images/carro(1).jpg')
 r,c,l = carro.shape

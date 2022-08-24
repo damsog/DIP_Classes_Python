@@ -18,6 +18,7 @@ Created on Thu Sep 19 01:25:39 2019
 
 
 import cv2
+import os
 import numpy as np
 
 # this function takes an image and gets some statistical information about
@@ -57,7 +58,7 @@ def statSegm(img):
     return img_med, img_std
     
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/river.jpg')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 r,c = img.shape

@@ -13,6 +13,7 @@ Created on Sat Sep  7 16:48:41 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
 def layers2single(img):
@@ -74,7 +75,7 @@ def decompose(img, printcomps = False):
     return iHSV, iLab, iLuv, iHLS, iBGR
 
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 img = cv2.imread(root + 'images/class12/015.jpg')
 r,c,l = img.shape

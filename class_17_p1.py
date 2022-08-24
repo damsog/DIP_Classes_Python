@@ -27,6 +27,7 @@ Created on Sun Sep 22 21:41:14 2019
 # each data would be each pixel.
 
 import cv2
+import os
 import numpy as np
 from scipy import stats
 

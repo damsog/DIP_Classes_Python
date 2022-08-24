@@ -13,6 +13,7 @@ Created on Sat Aug 17 18:27:24 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 

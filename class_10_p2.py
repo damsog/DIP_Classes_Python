@@ -16,9 +16,10 @@ Created on Sun Aug 25 19:26:36 2019
 # object to then delete all the other objects leaving only the number plate
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 # this function finds the biggest object on a binary image and deletes the
 # smaller objects

@@ -13,9 +13,10 @@ Created on Sun Aug 25 20:53:25 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 nino = cv2.imread('images/nino.bmp')
 nino = cv2.cvtColor(nino, cv2.COLOR_BGR2GRAY)

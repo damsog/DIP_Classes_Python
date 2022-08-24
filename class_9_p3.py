@@ -17,9 +17,10 @@ Created on Sun Sep  8 17:32:43 2019
 # an image with a value that we want
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 img = cv2.imread('images/tofill.bmp')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

@@ -17,9 +17,10 @@ Created on Sat Aug 24 15:31:19 2019
 # contours of binary figures
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 # lets read the image and keep it as (BGR even tho its binary) to draw the
 # contours later using colors

@@ -9,6 +9,7 @@ Created on Sun Aug 18 15:34:50 2019
 #       Conversion to other systems function
 # =============================================================================
 import cv2
+import os
 import numpy as np
 
 def components( imagen):

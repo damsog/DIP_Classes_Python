@@ -18,10 +18,11 @@ Created on Fri Aug 23 21:39:18 2019
 #
 
 import cv2
+import os
 #import numpy as np
 from time import sleep
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 carro = cv2.imread('images/carro(1).jpg')
 carro = cv2.cvtColor(carro, cv2.COLOR_BGR2GRAY)

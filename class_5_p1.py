@@ -13,10 +13,11 @@ Created on Sun Aug 18 14:41:39 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 from Componentes.getComponents import components
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 carro = cv2.imread(root + 'images/carro.jpg')
 

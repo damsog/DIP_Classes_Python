@@ -22,9 +22,10 @@ Created on Fri Sep 13 13:19:22 2019
 # into a trapezoid
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/imagen_2.jpg')
 
 # Affine

@@ -11,9 +11,10 @@ Created on Sat Aug 17 14:10:19 2019
 # =============================================================================
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 
 a = cv2.imread(root + 'images/paisaje.jpg')  #Reading an image
 cv2.imshow('frame1',a)         #showing original image

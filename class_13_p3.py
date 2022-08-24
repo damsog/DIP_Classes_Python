@@ -21,9 +21,10 @@ Created on Fri Sep 13 21:54:24 2019
 # change the perspective of an object on the image
 
 import cv2
+import os
 import numpy as np
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/imagen_2.jpg')
 
 # Similar to affine transformation we have to create a transformation matrix

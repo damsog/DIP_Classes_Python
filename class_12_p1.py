@@ -40,13 +40,14 @@ Created on Sun Sep  8 17:16:28 2019
 # low-pass filters(LPF), high-pass filters(HPF) etc.
 
 import cv2
+import os
 import numpy as np
 
 # lets make a simple averaging filter
 # for that lets use a normalized box filter
 kernel = np.ones((10,10), np.float32)/100
 
-root = 'D:/U de A/PDI/DIP_Clases_Python/'
+root = os.path.abspath(os.getcwd()) + '/images' 
 img = cv2.imread(root + 'images/placa_p.jpg')
 #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
